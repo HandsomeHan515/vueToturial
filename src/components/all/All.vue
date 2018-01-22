@@ -2,13 +2,12 @@
   <div>
     <button @click="getAds">获取ads</button>
     <button @click="addAd(payload)">添加</button>
-    
     <ul>
-      <li :key="item.id" v-for="item in gettersAds">
+      <li :key="item.id" v-for="(item, index) in gettersAds">
         <div>{{item.title}}</div>
+        <input v-model="item.title" />
         <img class="img" :src="item.image" />
-        <input :placeholder="info" />
-        <button @click="updateAd({id: item.id})">更新Title</button>
+        <button @click="updateAd({id: item.id, title: item.title})">更新Title</button>
         <button @click="delAd(item)">删除</button>
       </li>
     </ul>
@@ -22,7 +21,6 @@ export default {
   name: 'All',
   data () {
     return {
-      info: '请输入内容',
       payload: {
         title: '广告',
         image: image
@@ -39,6 +37,7 @@ export default {
   height: 150px;
   width: 300px;
   display: block;
+  margin-top: 15px;
 }
 p {
   height: 30px;
