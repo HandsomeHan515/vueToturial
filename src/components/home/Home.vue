@@ -1,18 +1,31 @@
 <template>
-  <div>
-    <Ad />
-    <button @click="changeMsg">修改数据</button>
-    <p>gettersMsg数据目前是: {{ gettersMsg }}</p>
+  <div class="home-container">
+    <div class="home-list">
+      <List />
+    </div>
   </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
-import Ad from './Ad'
+import { mapGetters, mapActions } from "vuex";
+import List from "./List";
+
 export default {
-  name: 'Home',
-  components: { Ad },
-  computed: {...mapGetters(['gettersMsg'])},
-  methods: {...mapActions(['changeMsg'])}
-}
+  name: "Home",
+  components: {
+    List
+  }
+};
 </script>
+
+<style lang="css">
+.home-container {
+  width: 80%;
+  margin: 0 auto;
+  height: 1000px;
+}
+.home-list {
+  margin-top: 20px;
+  background-color: #fff;
+}
+</style>

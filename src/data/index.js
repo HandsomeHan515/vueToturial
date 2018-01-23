@@ -15,3 +15,9 @@ export const helps = [
   { id: 6, question: '学生做题的状态老师可以实时查看吗？', answer: '学生的学习状态都会实时的推送给老师，确保老师及时了解。' },
   { id: 7, question: '群组的创建数量每个人有上限吗？', answer: '目前是没有上限的，后期将根据功能的开发逐步完善。' }
 ]
+
+export const homeLists = [
+  { id: 1, name: '任务列表' },
+  { id: 2, name: '测验列表' },
+  { id: 3, name: '作业列表' }
+]
