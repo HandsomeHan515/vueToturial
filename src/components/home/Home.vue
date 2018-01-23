@@ -21,11 +21,12 @@ export default {
 <style lang="css">
 .home-container {
   width: 80%;
+  padding: 20px;
   margin: 0 auto;
   height: 1000px;
 }
 .home-list {
-  margin-top: 20px;
+  padding: 0 20px 20px 20px;
   background-color: #fff;
 }
 </style>
