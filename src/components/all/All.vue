@@ -14,27 +14,25 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
-import { Button } from 'element-ui'
-import { image } from '@/service'
+import { mapGetters, mapActions } from "vuex";
+import { Button } from "element-ui";
 
 export default {
-  name: 'All',
-  data () {
+  name: "All",
+  data() {
     return {
       payload: {
-        title: '广告',
-        image: image
+        title: "广告"
       }
-    }
+    };
   },
   components: { Button },
-  created () {
-    this.$store.dispatch('getAds')
+  created() {
+    this.$store.dispatch("getAds");
   },
-  computed: {...mapGetters(['gettersAds'])},
-  methods: {...mapActions(['updateAd', 'delAd', 'addAd'])}
-}
+  computed: { ...mapGetters(["gettersAds"]) },
+  methods: { ...mapActions(["updateAd", "delAd", "addAd"]) }
+};
 </script>
 
 <style lang="css">

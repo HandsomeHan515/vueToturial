@@ -7,44 +7,45 @@
 </template>
 
 <script>
-import { Menu, MenuItem } from 'element-ui'
-import { nav } from '../../data'
+import { Menu, MenuItem } from "element-ui";
+import { nav } from "../../data";
 
 export default {
-  name: 'Header',
-  data () {
+  name: "Header",
+  data() {
     return {
-      message: 'Welcome to my project!',
-      msg: '@HandsomeHan',
+      message: "Welcome to my project!",
+      msg: "@HandsomeHan",
       nav,
-      activeIndex: '1'
-    }
+      activeIndex: "1"
+    };
   },
   components: {
-    Menu, MenuItem
+    Menu,
+    MenuItem
   },
   methods: {
-    handleSelect (key, keyPath) {
-      this.activeIndex = key
+    handleSelect(key, keyPath) {
+      this.activeIndex = key;
     }
   }
-}
+};
 </script>
 
 <style>
-  .title {
-    color: red;
-    text-align: left;
-  }
-  .content {
-    color: #333;
-    font-size: 24px;
-    text-align: left;
-  }
-  .menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-  }
+.title {
+  color: red;
+  text-align: left;
+}
+.content {
+  color: #333;
+  font-size: 24px;
+  text-align: left;
+}
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
 </style>

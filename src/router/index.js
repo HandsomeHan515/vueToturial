@@ -5,6 +5,7 @@ import Home from '@/components/home/Home'
 import All from '@/components/all/All'
 import Cart from '@/components/cart/Cart'
 import Mine from '@/components/mine/Mine'
+import Help from '@/components/help/Help'
 
 Vue.use(Router)
 
@@ -16,19 +17,24 @@ export default new Router({
       component: Home
     },
     {
-      path: '/all',
+      path: '/schedule',
       name: 'All',
       component: All
     },
     {
-      path: '/cart',
+      path: '/resources',
       name: 'Cart',
       component: Cart
     },
     {
-      path: '/mine',
+      path: '/resources',
       name: 'Mine',
       component: Mine
+    },
+    {
+      path: '/helps',
+      name: 'Help',
+      component: Help
     }
   ]
 })
