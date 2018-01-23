@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Button @click="getAds">获取ads</Button>
     <Button @click="addAd(payload)">添加</Button>
     <ul>
       <li :key="item.id" v-for="item in gettersAds">
@@ -30,8 +29,11 @@ export default {
     }
   },
   components: { Button },
+  created () {
+    this.$store.dispatch('getAds')
+  },
   computed: {...mapGetters(['gettersAds'])},
-  methods: {...mapActions(['getAds', 'updateAd', 'delAd', 'addAd'])}
+  methods: {...mapActions(['updateAd', 'delAd', 'addAd'])}
 }
 </script>
 
