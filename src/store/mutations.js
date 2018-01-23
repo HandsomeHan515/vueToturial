@@ -1,5 +1,3 @@
-import { request } from "../service/index";
-
 export const mutationsMsg = (state, payload) => {
   state.msg = payload.msg
 }
@@ -22,9 +20,10 @@ export const updateAd = (state, payload) => {
 export const delAd = (state, payload) => {
   state.ads = state.ads.filter(item => {
     if (item.id === payload.ad.id) {
-      return
+      return false
+    } else {
+      return item
     }
-    else return item
   })
 }
 

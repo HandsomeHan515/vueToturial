@@ -53,7 +53,7 @@ export const addAd = ({ commit }, payload) => {
     url: `http://api.handsomehan.cn:10001/v1/ads/`,
     method: 'POST',
     body: JSON.stringify(payload),
-    hasCert: false,
+    hasCert: false
   }).then(resp => {
     commit({
       type: 'addAd',

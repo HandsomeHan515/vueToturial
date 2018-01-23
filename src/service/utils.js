@@ -18,7 +18,7 @@ export const request = config => {
   if (config.hasHeader) {
     elements.headers = {
       'Accept': 'application/json',
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     }
   }
 

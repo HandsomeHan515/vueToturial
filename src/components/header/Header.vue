@@ -1,14 +1,13 @@
 <template>
-  <div>
-    <ul>
-      <li :key="item.id" v-for="item in nav">
-        <router-link class="link" :to="item.path">{{item.name}}</router-link>
-      </li>
-    </ul>
-  </div>
+  <Menu class="el-menu-demo menu" :default-active="activeIndex" @select="handleSelect" mode="horizontal" router>
+    <MenuItem v-for="item in nav" :index="item.id.toString()" :key="item.id" :route="{path:item.path}">
+      {{item.name}}
+    </MenuItem>
+  </Menu>
 </template>
 
 <script>
+import { Menu, MenuItem } from 'element-ui'
 import { nav } from '../../data'
 
 export default {
@@ -17,7 +16,16 @@ export default {
     return {
       message: 'Welcome to my project!',
       msg: '@HandsomeHan',
-      nav
+      nav,
+      activeIndex: '1'
+    }
+  },
+  components: {
+    Menu, MenuItem
+  },
+  methods: {
+    handleSelect (key, keyPath) {
+      this.activeIndex = key
     }
   }
 }
@@ -33,15 +41,10 @@ export default {
     font-size: 24px;
     text-align: left;
   }
-  ul {
+  .menu {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-  }
-  ul, li {
-    padding: 0;
-    margin: 0;
-    list-style: none;
   }
 </style>

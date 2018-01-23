@@ -1,14 +1,14 @@
 <template>
   <div>
-    <button @click="getAds">获取ads</button>
-    <button @click="addAd(payload)">添加</button>
+    <Button @click="getAds">获取ads</Button>
+    <Button @click="addAd(payload)">添加</Button>
     <ul>
-      <li :key="item.id" v-for="(item, index) in gettersAds">
+      <li :key="item.id" v-for="item in gettersAds">
         <div>{{item.title}}</div>
         <input v-model="item.title" />
         <img class="img" :src="item.image" />
-        <button @click="updateAd({id: item.id, title: item.title})">更新Title</button>
-        <button @click="delAd(item)">删除</button>
+        <Button @click="updateAd({id: item.id, title: item.title})">更新Title</Button>
+        <Button @click="delAd(item)">删除</Button>
       </li>
     </ul>
   </div>
@@ -16,7 +16,9 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import { Button } from 'element-ui'
 import { image } from '@/service'
+
 export default {
   name: 'All',
   data () {
@@ -27,6 +29,7 @@ export default {
       }
     }
   },
+  components: { Button },
   computed: {...mapGetters(['gettersAds'])},
   methods: {...mapActions(['getAds', 'updateAd', 'delAd', 'addAd'])}
 }
